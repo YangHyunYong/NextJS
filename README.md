@@ -13,9 +13,7 @@ AppRouter 사용 흐름
 
 동적 라우팅
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/14d750dd-52d9-46a6-9b79-58e6c84469f6/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/be5bdaa2-491a-4713-a710-e1fdad1544a7/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/2fa8d908-7687-4a92-b7a8-6d5b5c047bbb)
 
 → read 폴더 하위에 [변수]/page.js 생성, props.params.변수 형태로 변수 값 사용
 
@@ -25,7 +23,7 @@ a태그 x, Link 태그 사용해야함
 
 → 컨텐츠가 바뀌는 영역이 일부이지만 전체 웹 페이지를 다시 가져온다 → 사용자 입장에선 느리고, 서비스 제공자는 돈이 많이 든다, 방문한 적이 있는 페이지를 다시 방문해도 다시 가져온다
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/1cd727ff-eac3-4b0d-bf73-84adc5422b68/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/aed9c971-a6cb-49c9-b54c-2e92a7d2db4e)
 
 # Server
 
@@ -34,7 +32,7 @@ npx json-server@0.17.4 --port 9999 --watch db.json
 -> --watch: db.json이 변경되면 바로 서버가 재시동
 ```
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/a6377ba8-5c8c-4c3a-ad20-3c862c7f9e83/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/529ff021-876f-4bce-864e-10bcb0aae280)
 
 정보를 표현, 사용자와 상호작용x → Server Component로 만드는게 좋음
 
@@ -46,11 +44,11 @@ npx json-server@0.17.4 --port 9999 --watch db.json
 
 → Client component로 변경하려면 최상단에 “use client” 입력
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/2add07f8-e6c6-400d-8668-e8deb5c9bfd8/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/df6016ed-36f6-4a4d-bfd7-34622d7d78c2)
 
 → 이렇게 Client component에서 useEffect로 서버와 연결하면 JS disable일 때 데이터를 받아오지 못함 + 보안 문제로 id,password 같은 데이터 사용할 수 없음
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/e8b5084d-e7c8-4e56-a18c-9484fcfd5560/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/2f1a4158-cc69-484a-840a-6da913ec7730)
 
 서버쪽에서 fetch메서드 실행, topic 데이터를 받아와서 글 목록을 동적으로 생성 후, 결과를 서버 쪽에 저장, 정적인 내용만 클라이언트에 전달
 
@@ -60,23 +58,21 @@ npx json-server@0.17.4 --port 9999 --watch db.json
 
 이 페이지가 사용자와 상호작용 하는가? → NO → Server Component 로 구현
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/1608e9bb-0f80-443a-87ff-01702762f835/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/3db06ab4-c9c2-4272-a7be-469f1837fe3d)
 
 ## 글 생성
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/b1f36103-38f2-448f-acf9-4d113230787c/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/ac7c3b40-598a-4565-b4cc-cf5bca5653ba)
 
 Next.js App router방식 사용 시, useRouter는 next/navigation에서 import해야함, router.push(); 사용
 
 ### Cache
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/92a97793-f3c3-4c97-b4f8-359255c993fd/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/81f99e46-3005-420b-83e0-3e515dcf0e8b)
 
 Revalidating 확인해보기
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/c33baea4-0490-43e4-a888-cfa9e5f6d91e/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/a83caa3d-fa16-4276-954f-aae6b8f12d93/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/7e441a77-5d4f-41da-bfd2-3e76bb834655)
 
 → cache: “no-store” 이나 next: {revalidate:0} 설정 후 router.push() 이후에 router.refresh()
 
@@ -84,7 +80,7 @@ Revalidating 확인해보기
 
 Update, Delete 버튼을 없애기 위해 id값이 있는지 여부를 확인해야함 → 최상단의 layout.js(Server Component)에서는 useParams()를 사용할 수 없음 → 관련 Link들만 Client화 해야 함 → Control 컴포넌트로 분리 후 Control 컴포넌트를 Client화 하기
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/0c120b5b-7099-47a2-b596-5d25adf65ec9/96df94be-1c43-4d16-95e1-8d6e422f882d/Untitled.png)
+![image](https://github.com/YangHyunYong/NextJS/assets/43340172/d5199a4e-fbcc-4cf3-a1d5-91569f5b7d4f)
 
 ## 환경 변수
 
